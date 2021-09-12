@@ -1,0 +1,38 @@
+s .pages {
+        /* position: absolute;     */
+
+        margin: auto;
+        /* padding-top: 35px; */
+        width: 47%;
+        background-color: wheat;
+        padding: 10px;
+        max-width: 55%;
+        /* display: flex; */
+        /* justify-content:column; */
+        flex-direction: column;
+        gap: 2em;
+        border-radius: 12px;
+}
+
+.pages label {
+        text-align: left;
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+}
+
+.pages input,
+.pages textarea {
+        display: block;
+        border-radius: 10px;
+        width: 100%;
+        padding: 25px;
+
+        border: 1px solid #ccc;
+        padding: 0.2rem;
+}
+
+.pages input:focus,
+.pages textarea:focus {
+        outline: none;
+}

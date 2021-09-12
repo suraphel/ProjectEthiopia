@@ -1,0 +1,77 @@
+.auth {
+  margin: 3rem auto;
+  width: 100%;
+  max-width: 43rem;
+  border-radius: 6px;
+  background-color: #f3f0f5;
+  /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); */
+  padding: 1rem;
+  text-align: center;
+}
+
+.auth h1 {
+  text-align: center;
+}
+
+.control {
+  margin-bottom: 0.5rem;
+}
+
+.control label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.control input {
+  font: inherit;
+  background-color: #f4f1f7;
+  color: #631b7e;
+  border-radius: 12px;
+  border: 1px solid rgb(189, 181, 181);
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem;
+}
+
+.actions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .actions button {
+  cursor: pointer;
+  font: inherit;
+  color: white;
+  background-color: #d88418;
+  border: 1px solid #d88418;
+  border-radius: 6px;
+  padding: 0.5rem 2.5rem;
+  width: 100%;
+}
+
+.actions button:hover {
+  background-color: #873abb;
+  border-color: #873abb;
+} */
+
+.actions .toggle {
+  margin-top: 1rem;
+  background-color: transparent;
+  color: #250fa3f6;
+  border: none;
+  padding: 0.15rem 1.5rem;
+}
+
+.actions .toggle:hover {
+  background-color: transparent;
+  color: #ae82cc;
+}
+
+@media (min-width: 768px) {
+  .button {
+    width: auto;
+  }
+}

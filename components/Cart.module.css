@@ -1,0 +1,30 @@
+.cart {
+  font-size: medium;
+  color: aquamarine;
+  padding: 2rem;
+  background-color: rgb(235, 133, 82);
+  text-align: center;
+  width: 20%;
+  padding: 2.5rem;
+  margin: 2.5rem auto;
+  max-width: 40rem;
+  box-shadow: 0 2px 8px black;
+  border-radius: 12px;
+  position: relative;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.CartContainer {
+  list-style: none;
+  border-radius: 12px;
+  margin: 0;
+  display: flex;
+  position: relative;
+}
+
+.li {
+  align-items: center;
+}

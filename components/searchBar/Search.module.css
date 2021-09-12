@@ -1,0 +1,43 @@
+/* .form {
+  width: 100%;
+} */
+
+.searchbar {
+  border-radius: 22px;
+  border: solid 1px black;
+  position: fixed;
+  width: 100%;
+  top: 120px;
+  padding: 1.5rem;
+  margin: 0;
+  height: 42px;
+  font-size: 25px;
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+  /* color: rgb(17, 1, 1); */
+  /* margin-top: 0 200px; */
+  background-color: white;
+  text-decoration: none;
+}
+
+.searchbar:hover {
+  background: #e8eef3;
+}
+
+* .h2 {
+  text-align: center;
+}
+
+.h3 {
+  text-align: center;
+}
+
+@media (min-width: 40rem) {
+  .searchbar {
+    width: 70%;
+    font-size: 2rem;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
