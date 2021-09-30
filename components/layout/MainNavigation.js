@@ -1,10 +1,10 @@
 import classes from "./MainNavigation.module.css";
 import { useContext } from "react";
 import Link from "next/link";
-import AuthenticationContext from "../Token/LogInAuthentication ";
+import AuthenContext from "../Token/LogInAuthentication ";
 
 function MainNavigation() {
-  const authCtx = useContext(AuthenticationContext);
+  const authCtx = useContext(AuthenContext);
   const IsloggedIn = authCtx.loggedIn;
 
   const logoutHandler = () => {
@@ -13,7 +13,7 @@ function MainNavigation() {
 
   return (
     <header className={classes.header}>
-      <Link className={classes.logo} href="/">
+      <Link href="/" className={classes.logo}>
         Balemoja
       </Link>
 
@@ -32,14 +32,18 @@ function MainNavigation() {
             {/* next Link href = '/name of component wrapped in link' */}
             <Link href="/UploadingCompaniesToDb">New Company</Link>
           </li>
-          <li className={classes.li}>
-            <Link
-              href="/AuthForm"
-              // className={classes.link}
-            >
-              Login
-            </Link>
-          </li>
+
+          {!IsloggedIn && (
+            <li className={classes.li}>
+              <Link
+                href="/AuthForm"
+                // className={classes.link}
+              >
+                Login
+              </Link>
+            </li>
+          )}
+
           {authCtx.IsloggedIn && (
             <button onClick={logoutHandler}>Logout</button>
           )}

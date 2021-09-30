@@ -1,13 +1,13 @@
 import classes from "./ProfileForm.module.css";
 import React, { useRef, useContext } from "react";
-import AuthenticationContext from "../../Token/LogInAuthentication ";
+import AuthenContext from "../../Token/LogInAuthentication ";
 import { useRouter } from "next/router";
 
 const ProfileForm = () => {
   const router = useRouter();
 
   const newPasswordInputRef = useRef();
-  const authCtx = useContext(AuthenticationContext); //  out password is stored in the Context field.
+  const authCtx = useContext(AuthenContext); //  out password is stored in the Context field.
   // const history = useHistory();
 
   // for changing existing password, accesable only if logged in

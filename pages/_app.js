@@ -7,16 +7,16 @@ import "../styles/globals.css";
 import "../components/dataFlow/companyregistration/AddCompanies.css";
 import "../components/dataFlow/choreregistreation/AddChore.module.css";
 import "../components/searchBar/Search.module.css";
-import { AuthenticationWrapper } from "../components/Token/LogInAuthentication ";
+import { AuthContextProvider } from "../components/Token/LogInAuthentication ";
 
 function MyApp({ Component, pageProps }) {
   return (
     <div>
-      {/* <AuthenticationWrapper> */}
       <Layout>
+        {/* <AuthContextProvider> */}
         <Component {...pageProps} />
+        {/* </AuthContextProvider> */}
       </Layout>
-      {/* </AuthenticationWrapper> */}
     </div>
   );
 }

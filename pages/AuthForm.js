@@ -1,11 +1,13 @@
 // LogIn form and validation with firebase
 
 import { useState, useRef, useContext } from "react";
-import AuthenticationContext from "../components/Token/LogInAuthentication ";
+import AuthenContext from "../components/Token/LogInAuthentication ";
+
 import classes from "../components/usersAccount/Auth/AuthForm.module.css";
 import { useRouter } from "next/router";
 import Button from "../components/ui/button/Button";
 import UserInput from "../components/hooks/user-inputs";
+import { useHistory } from "next/router";
 
 const AuthForm = () => {
   const {
@@ -26,6 +28,7 @@ const AuthForm = () => {
     reset: resetPassword,
   } = UserInput((value) => value.trim() !== "");
 
+  // const history = useHistory();
   let formValidation = false;
 
   if (validUsername && validPassword) {
@@ -38,7 +41,7 @@ const AuthForm = () => {
   const passwordInputRef = useRef();
   // const history = useHistory();
 
-  const authCtx = useContext(AuthenticationContext);
+  const authCtx = useContext(AuthenContext);
   // validation if needed
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setLoading] = useState(false);
@@ -61,13 +64,19 @@ const AuthForm = () => {
 
     if (isLogin) {
       url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=FIREBASE_AUTH";
+        // this goes to the test page of the server
+        // "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBILHtgI_IbbZADrPf-oTa-3nJPvIL4qSs";
+
+        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyD2dHvMXmJE9RIAgPwJvc09z8L8irh0Vmc";
 
       setLoading(true);
     } else {
       url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBILHtgI_IbbZADrPf-oTa-3nJPvIL4qSs";
+        // "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBILHtgI_IbbZADrPf-oTa-3nJPvIL4qSs";
+        // for the test page and it works
+        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyD2dHvMXmJE9RIAgPwJvc09z8L8irh0Vmc";
     }
+
     fetch(url, {
       method: "POST",
       body: JSON.stringify({
@@ -85,7 +94,7 @@ const AuthForm = () => {
           return res.json();
         } else {
           return res.json().then((data) => {
-            //console.log(data);
+            authCtx.login(data.idToken);
             const errorM = data.error.message;
             throw new Error(errorM); // if a problem look in here
           });
@@ -93,18 +102,18 @@ const AuthForm = () => {
         // Automatic logout based on time
       })
       .then((data) => {
+        console.log("if it went well" + data);
         const expirationTime = new Date(
-          new Date().getTime() + +data.expiresIn * 1000
+          new Date().getTime() + +data.expiresIn * 3600
         );
         authCtx.login(data.idToken, expirationTime.toISOString());
-        router.push("/Gardner");
-
+        router.push("/FetchingFromDB");
+        //testing
         // history.replace("/");
         // Now the user is logged as he has received a tokken.
-        //console.log(data);
       })
       .catch((err) => {
-        //error source is built-in message form the firebase
+        //error source is built-in message from firebase
         alert(err.message);
       });
 

@@ -7,8 +7,8 @@ import AuthenticationContext from "../components/Token/LogInAuthentication ";
 // import '../../App.css';
 
 function FetchingFromDB() {
-  const authCtx = useContext(AuthenticationContext);
-  const IsloggedIn = authCtx.loggedIn;
+  //   const authCtx = useContext(AuthenticationContext);
+  //   const IsloggedIn = authCtx.loggedIn;
 
   const [chores, setchores] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -19,7 +19,7 @@ function FetchingFromDB() {
     setError(null);
     try {
       const response = await fetch(
-        "https://balmoja-49d90-default-rtdb.europe-west1.firebasedatabase.app/Chores.json"
+        "https://balemoja-9c5e6-default-rtdb.europe-west1.firebasedatabase.app/Chores.json"
       );
       if (!response.ok) {
         throw new Error("Something new has gone wrong!");
@@ -35,6 +35,7 @@ function FetchingFromDB() {
           id: key,
           descriptionData: data[key].descriptionData,
           introData: data[key].introData,
+          //   lineOfBusiness: data[key].lineOfBusiness,
           // introData: data[key].introData
         });
         // console.log(data);
@@ -51,20 +52,6 @@ function FetchingFromDB() {
     fetchchoresHandler();
   }, [fetchchoresHandler]);
 
-  // time to upload to the fire base db
-  // async function AddchoreHandler(choreDataObject) {
-  // 	const responce = await fetch('https://balmoja-49d90-default-rtdb.europe-west1.firebasedatabase.app/names.json',
-  // 	{
-  // 		method:'POST',
-  // 		body:JSON.stringify(choreDataObject),
-  // 		headers:{
-  // 			'Content-Type' : 'application/json'}
-  // 		}
-  // 	);
-  // 	const data = await responce.json();
-  // 	console.log(data);
-  // }
-
   let content = <p>Found no chores.</p>;
 
   if (chores.length > 0) {
@@ -78,7 +65,7 @@ function FetchingFromDB() {
   if (isLoading) {
     content = <p>Loading...</p>;
   }
-
+  console.log(content);
   return (
     <React.Fragment>
       {/* <section>
@@ -97,6 +84,21 @@ function FetchingFromDB() {
 export default FetchingFromDB;
 
 /*
+
+
+  // time to upload to the fire base db
+  // async function AddchoreHandler(choreDataObject) {
+  // 	const responce = await fetch('https://balmoja-49d90-default-rtdb.europe-west1.firebasedatabase.app/names.json',
+  // 	{
+  // 		method:'POST',
+  // 		body:JSON.stringify(choreDataObject),
+  // 		headers:{
+  // 			'Content-Type' : 'application/json'}
+  // 		}
+  // 	);
+  // 	const data = await responce.json();
+  // 	console.log(data);
+  // }
 import React, { useState, useEffect, useCallback } from 'react';
 
 import ChoresList from '../companyregistration/CompanyList';

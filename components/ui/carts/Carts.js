@@ -1,6 +1,6 @@
 import classes from "./Carts.module.css";
 
 const Carts = (props) => {
-  return <carts className={classes.cart}>{props.children}</carts>;
+  return <cart className={classes.Carts}>{props.children}</cart>;
 };
 export default Carts;

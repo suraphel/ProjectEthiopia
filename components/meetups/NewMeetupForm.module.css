@@ -1,7 +1,19 @@
 .form {
-  padding: 1rem;
+  margin-top: 0;
+  width: 100%;
+  max-width: 63rem;
+  border-radius: 6px;
+  background-color: #f3f0f5;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  /* padding: 0.5rem; */
+  text-align: left;
 }
-
+@media (min-width: 768px) {
+  .form {
+    padding: 5rem;
+    margin: 3rem auto;
+  }
+}
 .control {
   margin-bottom: 0.5rem;
 }
@@ -25,6 +37,10 @@
 .actions {
   margin-top: 1rem;
   text-align: right;
+}
+
+.control ::placeholder {
+  font-size: small;
 }
 
 /* .actions button {

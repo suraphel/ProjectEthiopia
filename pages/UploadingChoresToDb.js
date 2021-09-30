@@ -5,7 +5,8 @@ import AddChoresForm from "../components/dataFlow/choreregistreation/AddChoresFo
 function UploadingChoresToDb() {
   async function toDbHandler(choreDataObject) {
     const responce = await fetch(
-      "https://balmoja-49d90-default-rtdb.europe-west1.firebasedatabase.app/Chores.json",
+      "https://balemoja-9c5e6-default-rtdb.europe-west1.firebasedatabase.app/Chores.json",
+      // "https://balmoja-49d90-default-rtdb.europe-west1.firebasedatabase.app/Chores.json",
       {
         method: "POST",
         body: JSON.stringify(choreDataObject),

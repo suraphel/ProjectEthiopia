@@ -8,6 +8,8 @@ const Companies = (props) => {
       <h2>{props.namedata}</h2>
       <h3>{props.contactData}</h3>
       <h3>{props.tele}</h3>
+      <h3>{props.tin}</h3>
+      <p>{props.lineOfBusiness}</p>
     </li>
   );
 };

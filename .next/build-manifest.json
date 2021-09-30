@@ -14,10 +14,15 @@
     "static/development/_ssgManifest.js"
   ],
   "pages": {
-    "/": [
+    "/FetchingFromDB": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/index.js"
+      "static/chunks/pages/FetchingFromDB.js"
+    ],
+    "/UploadingCompaniesToDb": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/UploadingCompaniesToDb.js"
     ],
     "/_app": [
       "static/chunks/webpack.js",

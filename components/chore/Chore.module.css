@@ -1,6 +1,9 @@
 .chore {
-  margin: 1rem;
-  padding: 1rem;
+  width: 100%;
+  max-width: 60rem;
+  margin: 0.125rem auto;
+  /* padding: 2rem; */
+  padding-top: 3rem;
   background-color: #230052;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 12px;
@@ -8,13 +11,52 @@
   color: white;
 }
 
-.chore h2 {
-  font-size: 5rem;
-  color: #f7e702;
+.chore h4 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.75rem;
+  font-size: large;
+  color: #f5f5f3;
 }
 
 .chore h3 {
   color: #eccf77;
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
+}
+
+.button {
+  width: 40%;
+  font: inherit;
+  border-radius: 30px;
+  border: 1px solid #86621f;
+  background: #bb5128;
+  color: white;
+  cursor: pointer;
+  /* margin-bottom: 0.5 rem; */
+}
+
+.button:hover,
+.button:active {
+  background-color: #741188;
+  border-color: #741188;
+}
+
+.button.focus {
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .chore {
+    padding: 3rem;
+    align-content: center;
+  }
+  .button {
+    margin: 0 2rem;
+    background-color: cornflowerblue;
+    width: auto;
+    float: right;
+    padding: 0.5rem;
+
+    /* margin-top: 1rem; */
+  }
 }

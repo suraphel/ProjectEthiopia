@@ -9,8 +9,10 @@ const choreList = (props) => {
           key={chore.id}
           descriptionData={chore.descriptionData}
           introData={chore.introData}
+          // lineOfBusiness={chore.lineOfBusiness}
         />
       ))}
+
       {/* console.log(Chore); */}
     </ul>
   );

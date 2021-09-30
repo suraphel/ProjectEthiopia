@@ -24,14 +24,16 @@ const StartPage = (props) => {
           content="Connects highly skilled and reliable professionals with end users"
         />
       </Head>
+
+      {/* <div className={classes.background}> </div> */}
+
+      <ComponentUI />
+
+      {/* <MeetupList meetups={props.meetups} /> */}
       {/* <div className={backGround}> */}
       {/* <Image src="/ok.png" width={277} height={75} /> */}
-      {/* </div> */}
-      <div className={classes.background}> </div>
       {/* <SearchBar /> */}
-      <ComponentUI />
-      {/* <MeetupList meetups={props.meetups} /> */}
-      {/* <FetchingFromDB /> */}
+      {/* </div> */}
     </Fragment>
   );
 };

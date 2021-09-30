@@ -4,7 +4,7 @@
 import Head from "next/head";
 
 import { Fragment } from "react";
-import NewMeetupForm from "../NewMeetupForm";
+import NewMeetupForm from "../../components/meetups/NewMeetupForm";
 
 const NewmeetUp = () => {
   async function addMeetUpHandler(meetupData) {
@@ -16,7 +16,6 @@ const NewmeetUp = () => {
       },
     });
     const data = await responce.json();
-
     console.log(data);
   }
 

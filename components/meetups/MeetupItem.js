@@ -21,11 +21,11 @@ function MeetupItem(props) {
           <img src={props.image} alt={props.title} />
         </div>
         <div className={classes.content}>
-          <h3>{props.title}</h3>
+          <h1>{props.title}</h1>
           <address>{props.address}</address>
         </div>
         <div className={classes.actions}>
-          <button onClick={showDetails}>Show Details</button>
+          <button onClick={showDetails}> Contact Customer</button>
         </div>
       </Card>
     </li>

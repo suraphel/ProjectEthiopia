@@ -6,7 +6,7 @@ import { MongoClient } from "mongodb";
 // nothing to do with page rendering
 
 async function Handler(req, res) {
-  console.log(process.env.FIREBASE_AUTH);
+  // console.log(process.env.FIREBASE_AUTH);
   if (req.method === "POST") {
     const data = req.body;
 
@@ -14,9 +14,8 @@ async function Handler(req, res) {
     // because mongodb doc takes an object no need for disstructuring.
     // const { title, address, image, description } = data;
 
-    const client = await MongoClient.connect(
-      "mongodb+srv://admin:fdxCicGrFtNJd9gA@cluster0.xdax3.mongodb.net/meetups?retryWrites=true&w=majority"
-    );
+    const client = await MongoClient.connect;
+    "mongodb+srv://admin:MONGODB@cluster0.xdax3.mongodb.net/meetups?retryWrites=true&w=majority"();
     const db = client.db(); // to connect to the client-side db
     const meetupcollection = db.collection("meetups"); // create a collection called meetup
     // result is an object with an id as one of its properties
