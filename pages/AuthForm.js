@@ -7,7 +7,7 @@ import classes from "../components/usersAccount/Auth/AuthForm.module.css";
 import { useRouter } from "next/router";
 import Button from "../components/ui/button/Button";
 import UserInput from "../components/hooks/user-inputs";
-import { useHistory } from "next/router";
+// import { useHistory } from "next/router";
 
 const AuthForm = () => {
   const {
