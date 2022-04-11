@@ -2,7 +2,6 @@
 
 import Card from "../ui/Card";
 import classes from "./MeetupItem.module.css";
-
 import { useRouter } from "next/router";
 import MeetupDetail from "../../pages/[meetupId]/index";
 import MeetupDetails from "./MeetupDetails";

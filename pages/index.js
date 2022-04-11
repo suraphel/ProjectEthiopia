@@ -12,6 +12,7 @@ import FetchingFromDB from "./FetchingFromDB";
 import SearchBar from "./SearchBar";
 import SecurityService from "./SecurityService";
 import { Fragment } from "react";
+import UploaddingChoresToDb from "./UploadingChoresToDb";
 
 const StartPage = (props) => {
   return (
@@ -27,6 +28,7 @@ const StartPage = (props) => {
 
       {/* <div className={classes.background}> </div> */}
 
+      {/* <UploaddingChoresToDb /> */}
       <ComponentUI />
 
       {/* <MeetupList meetups={props.meetups} /> */}

@@ -17,6 +17,7 @@ function UploadingCompaniesToDb() {
     //   throw new Error('Error');
     // }
     const data = await responce.json();
+    // the responce from the server
     console.log(data);
   }
   return (

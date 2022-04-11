@@ -45,6 +45,10 @@ const timeCalculator = (expirationTime) => {
 const gettingStoredToken = () => {
   // const localhost = window.localhost();
   // console.log("localhosta");
+
+  const testing = window.localStorage.getItem();
+  console.log(testing + " from the local storgage ");
+
   const storedToken = localhost.getItem("token");
   const storedExpirationTime = localStorage.getItem("expirationTime");
   const remainingTime = timeCalculator(storedExpirationTime);
