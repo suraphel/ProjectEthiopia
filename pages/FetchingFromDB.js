@@ -18,6 +18,7 @@ function FetchingFromDB() {
     setError(null);
     try {
       const response = await fetch(
+        //"http://localhost:5000/produksjonsplass"
         "https://balemoja-9c5e6-default-rtdb.europe-west1.firebasedatabase.app/Chores.json"
       );
       if (!response.ok) {
@@ -25,7 +26,7 @@ function FetchingFromDB() {
       }
 
       const data = await response.json();
-      // console.log(data); //  data is here an object, Id = keys and
+      console.log(data); //  data is here an object, Id = keys and
 
       const loadedChores = [];
 
@@ -34,10 +35,13 @@ function FetchingFromDB() {
           id: key,
           descriptionData: data[key].descriptionData,
           introData: data[key].introData,
-          //   lineOfBusiness: data[key].lineOfBusiness,
-          // introData: data[key].introData
+          // descriptionData: data[key].kommunenummer,
+          // introData: data[key].produksjonsplassid,
+
+          lineOfBusiness: data[key].lineOfBusiness,
+          //   introData: data[key].introData,
         });
-        // console.log(data);
+        console.log(data);
       }
 
       setchores(loadedChores);
