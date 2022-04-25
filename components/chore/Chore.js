@@ -3,9 +3,10 @@ import Button from "../ui/button/Button";
 import classes from "../chore/Chore.module.css";
 import Link from "next/link";
 
+//Chore result page that has been renderes
+
 const Chore = (props) => {
   /* // font for the rendered page title */
-
   return (
     <li className={classes.chore}>
       <h3>{props.introData}</h3>
